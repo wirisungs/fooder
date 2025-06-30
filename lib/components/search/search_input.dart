@@ -11,28 +11,28 @@ class SearchBarWidget extends StatelessWidget {
     return TextField(
       controller: controller,
       onChanged: onChanged,
-      style: const TextStyle(fontSize: 18),
+      style: const TextStyle(fontSize: 12),
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(
-          vertical: 18,
-          horizontal: 24,
+          vertical: 12,
+          horizontal: 16,
         ),
         hintText: 'Tìm nhà hàng',
-        hintStyle: const TextStyle(color: Colors.grey, fontSize: 18),
-        suffixIcon: const Icon(Icons.search, color: Colors.grey, size: 28),
+        hintStyle: const TextStyle(color: Colors.grey, fontSize: 12),
+        suffixIcon: const Icon(Icons.search, color: Colors.grey, size: 16),
         filled: true,
         fillColor: Colors.white,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(40),
-          borderSide: const BorderSide(color: Colors.grey, width: 1),
+          borderSide: const BorderSide(color: Colors.grey, width: 0.5),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(40),
-          borderSide: const BorderSide(color: Colors.grey, width: 1),
+          borderSide: const BorderSide(color: Colors.grey, width: 0.5),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(40),
-          borderSide: const BorderSide(color: Colors.grey, width: 1.2),
+          borderSide: const BorderSide(color: Colors.grey, width: 0.5),
         ),
       ),
     );
