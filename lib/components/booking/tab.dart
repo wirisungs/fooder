@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fooder/assets/color/app_color.dart';
 
 class BookingTabBar extends StatelessWidget {
   final int selectedIndex;
@@ -34,9 +35,10 @@ class BookingTabBar extends StatelessWidget {
             // Đường line mờ phía dưới
             Container(
               margin: const EdgeInsets.only(top: 2),
-              height: 2,
+              height: 1,
               width: double.infinity,
-              color: Colors.red.withOpacity(0.15),
+              // ignore: deprecated_member_use
+              color: Color(0xFFE1001A36).withOpacity(0.21),
             ),
             // Gạch chân đỏ cho tab đang chọn
             AnimatedAlign(
@@ -47,9 +49,9 @@ class BookingTabBar extends StatelessWidget {
               duration: const Duration(milliseconds: 200),
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 32),
-                height: 3,
+                height: 2,
                 width: MediaQuery.of(context).size.width / 2 - 32,
-                color: Colors.red,
+                color: AppColors.secondary,
               ),
             ),
           ],
@@ -81,7 +83,7 @@ class _TabItem extends StatelessWidget {
           child: Text(
             text,
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 16,
               color: Colors.black,
               fontWeight: selected ? FontWeight.w600 : FontWeight.normal,
             ),
