@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../components/booking/tab.dart';
 import '../../components/booking/card.dart';
+import '../calender/rating.dart';
 
 class CalenderbookerPage extends StatefulWidget {
   const CalenderbookerPage({super.key});
@@ -37,6 +38,14 @@ class _CalenderbookerPageState extends State<CalenderbookerPage> {
                           table: '02',
                           withWho: 'Người yêu / vợ / chồng',
                           title: 'Jollicow - Chuẩn hương vị bò',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const RatingPage(),
+                              ),
+                            );
+                          },
                         ),
                         BookingCard(
                           date: '04/10/2004',
