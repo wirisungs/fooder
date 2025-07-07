@@ -32,6 +32,7 @@ flutter:
     - lib/assets/png/background.png
     - lib/assets/svg/navbar_off/
     - lib/assets/svg/navbar_on/
+    - lib/assets/svg/components/
     - lib/assets/png/img_test/
 
  

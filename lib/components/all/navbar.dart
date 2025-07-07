@@ -1,10 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../features/calender/main.dart';
-import '../features/notification/main.dart';
-import '../features/user/main.dart';
-import '../features/search/main.dart';
+import '../../features/calender/main.dart';
+import '../../features/notification/main.dart';
+import '../../features/user/main.dart';
+import '../../features/search/main.dart';
 
 class NavbarScaffold extends StatefulWidget {
   const NavbarScaffold({super.key});
