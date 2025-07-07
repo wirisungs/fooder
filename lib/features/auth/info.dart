@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import '../../components/navbar.dart';
+import '../../components/all/navbar.dart';
 
 class InfoPage extends StatefulWidget {
   const InfoPage({super.key});

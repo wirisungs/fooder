@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../auth/info.dart';
-// import '../../assets/png/background.png';
+import '../../components/auth/input.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -12,6 +12,17 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   bool _obscure = true;
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _phoneController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +46,6 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               const SizedBox(height: 67),
-              // const Spacer(),
               Expanded(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(32),
@@ -50,102 +60,58 @@ class _RegisterPageState extends State<RegisterPage> {
                         children: [
                           const Text('Đăng ký', style: kLoginHeaderTextStyle),
                           const SizedBox(height: 24),
-                          const Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              'Số điện thoại',
-                              style: kLabelTextStyle,
-                            ),
-                          ),
-                          const SizedBox(height: 6),
-                          TextField(
-                            style: kInputTextStyle,
-                            decoration: kTextFieldDecoration(
-                              hintText: 'Nhập số điện thoại',
-                              opacity: 0.01, // Độ mờ cho ô input 1
-                            ),
+                          InputField(
+                            label: 'Số điện thoại',
+                            hintText: 'Nhập số điện thoại',
+                            controller: _phoneController,
                             keyboardType: TextInputType.phone,
+                            opacity: 0.01,
                           ),
                           const SizedBox(height: 16),
-                          const Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text('Email', style: kLabelTextStyle),
-                          ),
-                          const SizedBox(height: 6),
-                          TextField(
-                            obscureText: _obscure,
-                            style: kInputTextStyle,
-                            decoration: kTextFieldDecoration(
-                              hintText: 'Nhập mật khẩu',
-                              opacity: 0.01, // Độ mờ cho ô input 2
-                              suffixIcon: IconButton(
-                                icon: Icon(
-                                  _obscure
-                                      ? Icons.visibility_off
-                                      : Icons.visibility,
-                                  color: Colors.white70,
-                                ),
-                                onPressed: () {
-                                  setState(() {
-                                    _obscure = !_obscure;
-                                  });
-                                },
-                              ),
-                            ),
+                          InputField(
+                            label: 'Email',
+                            hintText: 'Nhập email',
+                            controller: _emailController,
+                            keyboardType: TextInputType.emailAddress,
+                            opacity: 0.01,
                           ),
                           const SizedBox(height: 16),
-                          const Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text('Mật khẩu', style: kLabelTextStyle),
-                          ),
-                          const SizedBox(height: 6),
-                          TextField(
+                          InputField(
+                            label: 'Mật khẩu',
+                            hintText: 'Nhập mật khẩu',
+                            controller: _passwordController,
                             obscureText: _obscure,
-                            style: kInputTextStyle,
-                            decoration: kTextFieldDecoration(
-                              hintText: 'Nhập mật khẩu',
-                              opacity: 0.01, // Độ mờ cho ô input 2
-                              suffixIcon: IconButton(
-                                icon: Icon(
-                                  _obscure
-                                      ? Icons.visibility_off
-                                      : Icons.visibility,
-                                  color: Colors.white70,
-                                ),
-                                onPressed: () {
-                                  setState(() {
-                                    _obscure = !_obscure;
-                                  });
-                                },
-                              ),
+                            opacity: 0.01,
+                            suffixIcon: Icon(
+                              _obscure
+                                  ? Icons.visibility_off
+                                  : Icons.visibility,
+                              color: Colors.white70,
                             ),
+                            onSuffixIconPressed: () {
+                              setState(() {
+                                _obscure = !_obscure;
+                              });
+                            },
                           ),
                           const SizedBox(height: 16),
-                          const Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text('Email', style: kLabelTextStyle),
-                          ),
-                          const SizedBox(height: 6),
-                          TextField(
+                          InputField(
+                            label: 'Nhập lại mật khẩu',
+                            hintText: 'Nhập mật khẩu',
+                            controller: _passwordController,
                             obscureText: _obscure,
-                            style: kInputTextStyle,
-                            decoration: kTextFieldDecoration(
-                              hintText: 'Nhập mật khẩu',
-                              opacity: 0.01, // Độ mờ cho ô input 2
-                              suffixIcon: IconButton(
-                                icon: Icon(
-                                  _obscure
-                                      ? Icons.visibility_off
-                                      : Icons.visibility,
-                                  color: Colors.white70,
-                                ),
-                                onPressed: () {
-                                  setState(() {
-                                    _obscure = !_obscure;
-                                  });
-                                },
-                              ),
+                            opacity: 0.01,
+                            suffixIcon: Icon(
+                              _obscure
+                                  ? Icons.visibility_off
+                                  : Icons.visibility,
+                              color: Colors.white70,
                             ),
+                            onSuffixIconPressed: () {
+                              setState(() {
+                                _obscure = !_obscure;
+                              });
+                            },
                           ),
                           const Spacer(),
                           SizedBox(
