@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fooder/components/button.dart';
 import '../calender/calender_booked.dart';
 
 class LoginPage extends StatelessWidget {
@@ -16,16 +17,6 @@ class LoginPage extends StatelessWidget {
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 24),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const CalenderbookerPage(),
-                  ),
-                );
-              },
-              child: const Text('Go to Calender Booker'),
-            ),
           ],
         ),
       ),
